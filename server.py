@@ -20,7 +20,7 @@ def add_user():
 @app.route("/get-users")
 def get_users():
     response = fb.get('/users', None)
-    return jsonify(response)
+    return jsonify(**response)
 
 
 if __name__ == "__main__":
