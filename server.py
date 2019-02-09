@@ -9,7 +9,7 @@ fb = firebase.FirebaseApplication('https://hackriddleworkshop.firebaseio.com/', 
 @app.route('/add-user', methods=['POST'])
 def add_user():
     user_data = request.get_json(force=True)
-    response = fb.post('/users', user_data)
+    response = fb.put('/users', user_data['email'], user_data)
     return jsonify(response)
 
 
